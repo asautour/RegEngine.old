@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./js/component/app";
-import SidebarContent from './js/component/sidebar-content';
+import SidebarContent from './js/component/sidebar';
 
 import "./styles.css";
 

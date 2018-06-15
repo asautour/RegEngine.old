@@ -7,14 +7,14 @@ const styles = {
     fontWeight: 300,
   },
   header: {
-    backgroundColor: '#03a9f4',
+    backgroundColor: '#3A4A83',
     color: 'white',
-    padding: '16px',
-    fontSize: '1.5em',
+    padding: '8px',
+    fontSize: '1.3em',
   },
 };
 
-const MaterialTitlePanel = (props) => {
+const MenuBar = (props) => {
   const rootStyle = props.style ? { ...styles.root, ...props.style } : styles.root;
 
   return (
@@ -25,7 +25,7 @@ const MaterialTitlePanel = (props) => {
   );
 };
 
-MaterialTitlePanel.propTypes = {
+MenuBar.propTypes = {
   style: PropTypes.object,
   title: PropTypes.oneOfType([
     PropTypes.string,
@@ -34,4 +34,4 @@ MaterialTitlePanel.propTypes = {
   children: PropTypes.object,
 };
 
-export default MaterialTitlePanel;
+export default MenuBar;

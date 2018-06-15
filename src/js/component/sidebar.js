@@ -1,6 +1,7 @@
 import React from 'react';
-import MaterialTitlePanel from './material-title-panel';
+import MenuBar from './menubar';
 import PropTypes from 'prop-types';
+import ComponentFilter from './component-filter';
 
 const styles = {
   sidebar: {
@@ -9,14 +10,9 @@ const styles = {
   },
   sidebarLink: {
     display: 'block',
-    padding: '16px 0px',
+    padding: '1px 0px',
     color: '#757575',
     textDecoration: 'none',
-  },
-  divider: {
-    margin: '8px 0',
-    height: 1,
-    backgroundColor: '#757575',
   },
   content: {
     padding: '16px',
@@ -28,22 +24,19 @@ const styles = {
 const SidebarContent = (props) => {
   const style = props.style ? { ...styles.sidebar, ...props.style } : styles.sidebar;
 
-  const links = [];
+  const filters = [];
 
   for (let ind = 0; ind < 10; ind++) {
-    links.push(
-      <a key={ind} href="#" style={styles.sidebarLink}>Mock menu item {ind}</a>);
+    filters.push(
+      <a key={ind} href="#" style={styles.sidebarLink}><ComponentFilter/></a>);
   }
 
   return (
-    <MaterialTitlePanel title="Menu" style={style}>
+    <MenuBar title="Filters" style={style}>
       <div style={styles.content}>
-        <a href="index.html" style={styles.sidebarLink}>Home</a>
-        <a href="responsive_example.html" style={styles.sidebarLink}>Responsive Example</a>
-        <div style={styles.divider} />
-        {links}
+        {filters}
       </div>
-    </MaterialTitlePanel>
+    </MenuBar>
   );
 };
 
